@@ -1,0 +1,90 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{mathptmx} 
+
+\title{THE MATRIX RELOADED}
+\subtitle{Решение и разбор}
+\author{Артём Куртев, Дмитрий Попков}
+\institute{БФУ имени И.Канта}
+\date{\today}
+\begin{document}
+	\begin{frame}
+	\titlepage
+	\end{frame}
+	\begin{frame}
+		\frametitle{Содержание}
+		\begin{itemize}
+			\item Разбор задачи
+			\begin{itemize}
+				\item Формулировка
+				\item Исходных данных
+			\end{itemize}
+			\item Решение задачи
+			\item Ссылки
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Разбор задачи}
+		\begin{block}{Формулировка задачи}
+			It's happening exactly as before... Well, not exactly.
+		\end{block}
+		\begin{block}{Исходные данные}
+			\begin{itemize}
+				\item generator.txt
+				\item output.txt
+				
+			\end{itemize}
+		\end{block}
+	\end{frame}
+\begin{frame}
+		\frametitle{Решение задачи}
+			\text{\large{\textbf{\textit{Код решения:}}}} \newline	
+			(1)\text{\kern 1pc $from\,Crypto.Hash\,import\, SHA256$}\newline
+			(2)\text{\kern 1pc $from\,Crypto.Util.number\,import *$}\newline
+			(3)\text{\kern 1pc $from\,Crypto.Cipher\,import\,AES:$}\newline
+			(4)\text{\kern 1pc $key_length = 128$}\newline
+			(5)\text{\kern 1pc $key = SHA256.new(data=b'59598059112411096439149288006319$}\newline
+                         \text{\kern 1pc $4479432167104358696183689094613629455477050781014885725186$}\newline
+                         \text{\kern 1pc $9110638484873235200204605081157845088692257708370810040562$}\newline
+                         \text{\kern 1pc $721345').digest()[:key_length]$}\newline
+			(6)\text{\kern 1pc $iv = bytes.fromhex('334b1ceb2ce0d1bef2af9937cf82aad6')$}\newline
+		        (7)\text{\kern 1pc $cipher = AES.new(key, AES.MODE_CBC, iv)$}\newline
+		        (8)\text{\kern 1pc $cipher_text = bytes.fromhex('543e29415bdb1f694a705b2532a5beb$}\newline
+                            \text{\kern 1pc $7ebd7009591503ef3c4fbcebf9e62fe91307e5d98efcd49f9f3b198595$}\newline
+                            \text{\kern 1pc $ 6cafc89')$}\newline
+			(9)\text{\kern 1pc $plaintext = cipher.decrypt(cipher_text))$}\newline
+                        (10)\text{\kern 1pc $print(plaintext)$}\newline\newline
+			\text{\small\textit{Использованный ЯП --- Python, версии 3.7}}
+	\end{frame}
+\begin{frame}
+		\frametitle{Объяснение решения}
+		(1) Подключается библиотека.\newline
+		(2) Подключается библиотека.\newline
+		(3) Подключается библиотека.\newline
+		(4) Задаётся длина ключа.\newline
+		(5) Получаем из строки новый объект при помощи преобразования .\newline
+		(6) Создаём объект byets из строки шеснадцатиричных чисел (соль).\newline
+		(7)Получаем шифр из ключа и соли ,\newline
+		(8) Создаём объект byets из строки шеснадцатиричных чисел (шифртекст).\newline
+		(9) Декодируем.\newline
+               (10) На вывод получаем флаг.\newline
+	\end{frame}
+
+\begin{frame}
+\frametitle{Ссылки}
+		\begin{itemize}
+			\item {GitHub ссылки
+			\begin{itemize}
+			\item \href{https://github.com/Art232/-2022}{GitHub-репозиторий}
+			\item \href{https://goo-gl.me/g9NWZ}{Код}
+			\item \href{https://github.com/Nelifax/Summer-practice/blob/7bea7073e4a0e0341c1cacd58ebccdce28801e29/LaTeX_work.tex}{LaTeX-код}
+			\end{itemize}}
+		\end{itemize}
+	\end{frame}
+
+\end{document}
