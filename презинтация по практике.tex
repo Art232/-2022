@@ -31,12 +31,13 @@
 	\begin{frame}
 		\frametitle{Разбор задачи}
 		\begin{block}{Формулировка задачи}
-			It's happening exactly as before... Well, not exactly.
+			Найти флаг
 		\end{block}
 		\begin{block}{Исходные данные}
 			\begin{itemize}
 				\item generator.txt
 				\item output.txt
+                                \item flag.enc
 				
 			\end{itemize}
 		\end{block}
@@ -63,9 +64,9 @@
 	\end{frame}
 \begin{frame}
 		\frametitle{Объяснение решения}
-		(1) Подключается библиотека.\newline
+		(1) Импортруем функцию из библиотеки Crypto.Hash.\newline
 		(2) Подключается библиотека.\newline
-		(3) Подключается библиотека.\newline
+		(3) Импортруем функцию из библиотеки Crypto.Cipher.\newline
 		(4) Задаётся длина ключа.\newline
 		(5) Получаем из строки новый объект при помощи преобразования .\newline
 		(6) Создаём объект byets из строки шеснадцатиричных чисел (соль).\newline
@@ -82,7 +83,7 @@
 			\begin{itemize}
 			\item \href{https://github.com/Art232/-2022}{GitHub-репозиторий}
 			\item \href{https://goo-gl.me/g9NWZ}{Код}
-			\item \href{https://github.com/Nelifax/Summer-practice/blob/7bea7073e4a0e0341c1cacd58ebccdce28801e29/LaTeX_work.tex}{LaTeX-код}
+			\item \href{https://goo-gl.me/guvkc}{LaTeX-код}
 			\end{itemize}}
 		\end{itemize}
 	\end{frame}
